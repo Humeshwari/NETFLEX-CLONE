@@ -1,0 +1,372 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+img{
+    max-width: 100%;
+}
+body{
+    background: #000;
+    color: #fff;
+}
+/* HEADER SECTION */
+header{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(assets/image/background.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 26px 56px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+/* justify-content: space-around;  so the logo will be left side and the button will be right side  */
+header a.logo{
+    display: block;
+}
+header .logo img{
+    height: 37px;
+    cursor: pointer;
+}
+header div+div{
+    text-align: right;
+}
+header a.button{
+    display: inline-block;
+    background: #db0001;
+    color: #fff;
+    text-decoration: none;
+    padding: 7px 17px;
+    border-radius:3px;
+    cursor: pointer;
+}
+header select{
+    background: transparent;
+    color: #fff;
+    padding: 8px 0 6px 20px;
+    border-radius: 3px;
+}
+header div.select{
+ display: inline-block;
+ margin-right: 20px;
+}
+header div.select i{
+    height: 20px;
+    position: absolute;
+    margin-top: 8px;
+    margin-left: 5px;
+}
+
+
+.header-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    margin-top: 80px;
+}
+.header-content h1{
+     max-width: 950px;
+     font-size: 3rem;
+     font-weight: 900;
+     line-height: 50px;
+}
+.header-content h3{
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 50px;
+    margin-bottom: 20px;
+}
+.header p{
+    font-size: 20px;
+}
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    padding: 15px 99px ;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    margin-top: 30px;
+}
+button{
+    background: #db0001;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 15px 38px ;
+    margin-top: 30px;
+}
+
+/* FEATURE SECTION*/
+
+.features{
+  display: grid;
+  grid-template-columns: 1fr 1fr;  
+  gap: 46px;
+  padding: 70px 35px;
+  align-items: center;
+  border-top: 5px solid #222;
+}
+.features .text h2{
+    font-size: 3rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+}
+.features .text p{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.media{
+    position: relative;
+}
+.media.s1 img{
+    width: 400px;
+}
+.media.s1 video{
+    width: 293px;
+    position: absolute;
+    top: 62px;
+    left: 50px;
+} 
+.features:nth-child(odd) div.text{
+    order: 2;
+}
+.features .download{
+    border: 2px solid #888;
+    border-radius: 15px;
+    padding: 10px;
+    height: 95px;
+    text-align: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    width: 370px;
+    left: 50%;
+    margin-left: -185px;
+    background-color: #000;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+}
+.features .download img{
+   height: 75px;
+   width: auto;
+}
+.media.s3 img{
+    width: 400px;
+    position: relative;
+    z-index: 5;
+}
+.media.s3 video{
+    width: 245px;
+    position: absolute;
+    top: 22px;
+    left: 75px;
+} 
+
+/* FAQ SECTION */
+
+.faq{
+    padding: 10px 12%;
+    text-align: center;
+    font-size: 18px;
+    border-top: 6px solid #333;
+}
+.faq h2{
+    font-size: 3rem;
+    font-weight: 900;
+    margin-top: 20px;
+}
+.accordion{
+    margin: 60px auto;
+    width: 100%;
+    max-width: 1000px;
+    
+}
+.accordion li{
+    list-style: none;
+    width: 100%;
+    padding: 5px;
+}
+.accordion li label{
+    display: flex;
+    align-items: center;
+    padding: 26px;
+    font-size: 25px;
+    font-weight: 500;
+    background: #303030;
+    margin-bottom: 2px;
+    cursor: pointer;
+    position: relative;
+}
+label::after{
+    content: '+';
+    font-size: 34px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.5s;
+}
+input[type="radio"]{
+    display: none;
+}
+.accordion .content{
+    background: #303030;
+    text-align: left;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, padding 0.5s;
+}
+.accordion input[type="radio"]:checked + label + .content{
+    max-height: 600px;
+    padding: 30px 20px;
+
+}
+.accordion input[type="radio"]:checked + label::after{
+    transform: rotate(135deg);
+}
+.faq small{
+    font-size: 20px;
+}
+.faq input{
+    flex: 1;
+    border: none;
+    outline: none;
+    margin-left: 20px;
+    padding: 15px 95px ;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    margin-top: 30px;
+}
+.faq button{
+    background: #db0001;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 15px 35px ;
+    margin-top: 30px;
+}
+.faq .accordion label:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+/*FOOTER SECTION*/
+
+.footer{
+    padding: 50px 15% 10px;
+    border-top: 6px solid #333;
+    color: #fff;
+    margin-top: 50px;
+}
+.footer h2{
+    font-size: 18px;
+    font-weight: 400;
+}
+/* Style for the row of links */
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.footer .col{
+    flex-basis: 25%;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+.footer .col a{
+    display: block;
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+.footer .row{
+    align-items: flex-start;
+    padding: 10px 0;
+} 
+.footer .btn1{
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid white;
+    padding: 9px 20px;
+  
+}
+.footer .btn1 i{
+    width: 10px;
+    margin-left: 5px;
+}
+.footer .btn1 .fa-solid{
+ width: 10px;
+ margin-right: 12px;
+}
+.text{
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+}
+/* media query */
+
+@media only scrren and (max-width:600px){
+    .logo{
+        width: 80px;
+    }
+    nav button{
+        padding: 5px 10px;
+    }
+    nav .btn1{
+        padding: 4px 8px;
+    }
+    .header-content{
+        position: unset;
+        transform: none;
+        padding: 150px;
+    }
+    .header-content h1{
+        font-size: 30px;
+    }
+    .header .btn2{
+        font-size: 12px;
+        padding: 10px 15px;
+    }
+    .text-col, .img-col{
+        flex-basis: 100%;
+
+    }
+    .features h2{
+        font-size: 30px;
+    }
+    .features p{
+        font-size: 15px;
+    }
+    .row:nth-child(2), .row:nth-child(4){
+        flex-direction: column-reverse;
+    }
+    .features .row{
+        padding: 10px 0;
+    }
+    .faq h2{
+        font-size: 20px;
+    }
+    .accordion .content{
+        font-size: 14px;
+    }
+    .accordion li label{
+        padding: 10px;
+        font-size: 14px;
+    }
+}
